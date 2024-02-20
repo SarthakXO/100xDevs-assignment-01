@@ -17,9 +17,9 @@ function isAnagram(str1, str2) {
       }
     }
   }
-  if (finalstr.length == str1.length) {
+  if (finalstr == str1) {
     return true;
-  } else false;
+  } else return false;
 }
 
 module.exports = isAnagram;

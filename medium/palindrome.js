@@ -4,7 +4,41 @@
 */
 
 function isPalindrome(str) {
-  return true;
+  let palindrome = "";
+  let str2 = "";
+  for (let i = 0; i < str.length; i++) {
+    if (
+      str[i] == " " ||
+      str[i] == "," ||
+      str[i] == "." ||
+      str[i] == ":" ||
+      str[i] == "'" ||
+      str[i] == `"` ||
+      str[i] == `?` ||
+      str[i] == `!`
+    ) {
+      continue;
+    }
+    str2 = str2 + str[i];
+  }
+  for (let i = str.length - 1; i >= 0; i--) {
+    if (
+      str[i] == " " ||
+      str[i] == "," ||
+      str[i] == "." ||
+      str[i] == ":" ||
+      str[i] == "'" ||
+      str[i] == `"` ||
+      str[i] == `?` ||
+      str[i] == `!`
+    ) {
+      continue;
+    }
+    palindrome = palindrome + str[i];
+  }
+  if (palindrome.toLowerCase() == str2.toLowerCase()) {
+    return true;
+  } else return false;
 }
 
 module.exports = isPalindrome;
